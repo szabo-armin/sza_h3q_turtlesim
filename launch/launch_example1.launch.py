@@ -5,28 +5,13 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='turtlesim',
-            namespace='turtlesim1',
+            # namespace='turtle1',
             executable='turtlesim_node',
             name='sim'
         ),
         Node(
-            package='turtlesim',
-            namespace='turtlesim2',
-            executable='turtlesim_node',
-            name='sim'
+            package='sza_h3q_turtlesim',
+            executable='draw',
+            output='screen',
         ),
-        Node(
-            package='turtlesim',
-            executable='mimic',
-            name='mimic',
-            remappings=[
-                ('/input/pose', '/turtlesim1/turtle1/pose'),
-                ('/output/cmd_vel', '/turtlesim2/turtle1/cmd_vel'),
-            ]
-        ),
-        # Node(
-        #     package='ros2_python_template',
-        #     executable='simple_sub_node',
-        #     output='screen',
-        # ),
     ])

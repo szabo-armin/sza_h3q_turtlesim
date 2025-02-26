@@ -23,7 +23,7 @@ colcon build --packages-select sza_h3q_turtlesim --symlink-install
 <details>
 <summary> Don't forget to source before ROS commands.</summary>
 
-``` bash
+``` r
 source ~/ros2_ws/install/setup.bash
 ```
 </details>

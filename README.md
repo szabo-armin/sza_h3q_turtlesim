@@ -20,13 +20,11 @@ cd ~/ros2_ws
 colcon build --packages-select sza_h3q_turtlesim --symlink-install
 ```
 
-<details>
-<summary> Don't forget to source before ROS commands.</summary>
+### Don't forget to source before ROS commands.
 
 ``` r
 source ~/ros2_ws/install/setup.bash
 ```
-</details>
 
 ``` r
 ros2 launch sza_h3q_turtlesim launch_example1.launch.py

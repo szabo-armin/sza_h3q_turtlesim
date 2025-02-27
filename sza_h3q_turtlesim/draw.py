@@ -18,42 +18,36 @@ class CubeDrawer(Node):
         time.sleep(duration)
 
     def draw_cube(self):
-        side_length = 2.0  # Az alapnégyzet oldalhossza
-        depth_length = 1.5  # A mélység (perspektíva miatt kisebb)
+        side_length = 2.0
+        depth_length = 1.5
 
-        #   Első négyzet kirajzolása
-        for _ in range(4):
-            self.move(linear_x=side_length, duration=1.0)
-            self.move(angular_z=math.pi / 2, duration=1.0)  # 90 fokos fordulás
-
-        #   Mozgás a hátsó négyzet kezdőpontjára
-        self.move(angular_z=-math.pi / 4, duration=1.0)  # 45 fok balra
-        self.move(linear_x=depth_length, duration=1.0)  # Mélységbe mozgás
-        self.move(angular_z=math.pi / 4, duration=1.0)  # 45 fok jobbra
-
-        #   Hátsó négyzet kirajzolása
         for _ in range(4):
             self.move(linear_x=side_length, duration=1.0)
             self.move(angular_z=math.pi / 2, duration=1.0)
 
-        #   Többi csúcs összekötése
+        self.move(angular_z=-math.pi / 4, duration=1.0)
+        self.move(linear_x=depth_length, duration=1.0)
+        self.move(angular_z=math.pi / 4, duration=1.0)  
 
-        self.move(angular_z=-math.pi / 4, duration=1.0)  # 45 fok balra
-        self.move(linear_x=-depth_length, duration=1.0)  # Vissza az A négyzethez
-        self.move(angular_z=math.pi / 4, duration=1.0)  # 45 fok jobbra
-        self.move(linear_x=side_length, duration=1.0)  # A2-be mozgás
-        self.move(angular_z=-math.pi / 4, duration=1.0)  # 45 fok balra
-        self.move(linear_x=depth_length, duration=1.0)  # B2-be mozgás
-        self.move(angular_z=math.pi / 4, duration=1.0)  # 45 fok jobbra
-        
-        self.move(angular_z=math.pi / 2, duration=1.0)  # 90 fokos fordulás
-        self.move(linear_x=side_length, duration=1.0)  # Vissza az A négyzethez
-        self.move(angular_z=math.pi / 4, duration=1.0)  # 45 fok jobbra
-        self.move(linear_x=depth_length, duration=1.0)  # Vissza az A négyzethez
-        self.move(angular_z=math.pi / 4, duration=1.0)  # 45 fok jobbra
-        self.move(linear_x=side_length, duration=1.0)  # Vissza az A négyzethez
-        self.move(angular_z=3 * math.pi / 4, duration=1.0)  # 135 fokos fordulás
-        self.move(linear_x=depth_length, duration=1.0)  # Vissza az A négyzethez
+        for _ in range(4):
+            self.move(linear_x=side_length, duration=1.0)
+            self.move(angular_z=math.pi / 2, duration=1.0)
+
+        self.move(angular_z=-math.pi / 4, duration=1.0)  
+        self.move(linear_x=-depth_length, duration=1.0)  
+        self.move(angular_z=math.pi / 4, duration=1.0)  
+        self.move(linear_x=side_length, duration=1.0)  
+        self.move(angular_z=-math.pi / 4, duration=1.0)  
+        self.move(linear_x=depth_length, duration=1.0)  
+        self.move(angular_z=math.pi / 4, duration=1.0)  
+        self.move(angular_z=math.pi / 2, duration=1.0)  
+        self.move(linear_x=side_length, duration=1.0)  
+        self.move(angular_z=math.pi / 4, duration=1.0)  
+        self.move(linear_x=depth_length, duration=1.0)  
+        self.move(angular_z=math.pi / 4, duration=1.0)  
+        self.move(linear_x=side_length, duration=1.0)  
+        self.move(angular_z=3 * math.pi / 4, duration=1.0)  
+        self.move(linear_x=depth_length, duration=1.0)  
 
         self.get_logger().info("3D kocka kész!")
 

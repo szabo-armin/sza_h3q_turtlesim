@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'draw = sza_h3q_turtlesim.draw:main',
+            'cube_publisher = sza_h3q_turtlesim.cube_publisher:main',
         ],
     },
 )

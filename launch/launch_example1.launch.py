@@ -14,5 +14,11 @@ def generate_launch_description():
                 package='turtlesim',
                 executable='turtlesim_node',
             ),
+            Node(
+            package='sza_h3q_turtlesim',
+            executable='cube_publisher', 
+            name='cube_publisher',
+            output='screen',
+        ),
         ]
     )
